@@ -9,25 +9,23 @@ namespace Домашняя_работа2
 {
     internal class PaymentCard
     {
-        private string Cardnumber;
-        private string Expirationdate;
-        private string Firstname;
-        private string Lastname;
-        private int Ccv;
+        public Person Person { get; set; }
+        public string Cardnumber {get; set; }
+        public ExpirationDate ExpirationDate { get; set; }
+        
+        public int Ccv { get; set; }
 
-        public PaymentCard (string cardnumber, string expirationdate, string firstname, string lastname, int ccv)
+        public PaymentCard (Person person,string cardnumber, ExpirationDate expirationDate,int ccv)
         {
+            Person = person;
             Cardnumber = cardnumber;
-            Expirationdate = expirationdate;
-            Firstname = firstname;
-            Lastname = lastname;
+            ExpirationDate = expirationDate;
             Ccv = ccv;
-
 
         }
         public string GetFullInformation()
         {
-            return String.Format("Cardnumber:{0}, Expirationdate: {1}, Firstname: {2}, Lastname: {3} , Ccv: {4}", Cardnumber, Expirationdate, Firstname, Lastname, Ccv);
+            return String.Format("{0},\n Cardnumber: {1},\n ExpirationDate: {2},\n Ccv: {3}", Person.GetPersonInformation(),Cardnumber, ExpirationDate.GetDateInformation() ,Ccv);
 
 
         }
