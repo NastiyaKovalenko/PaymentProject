@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Домашняя_работа2
+﻿namespace PaymentApplication
 {
     internal class ExpirationDate
     {
@@ -16,11 +10,9 @@ namespace Домашняя_работа2
             Month = month;
             Year = year;
         }
-
-        public string GetDateInformation()
+        public override string ToString()
         {
-            return string.Format("{0} / {1}",Month,Year);
-
+            return Month + "/" + Year;
         }
     }
 }
